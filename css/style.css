@@ -1,0 +1,1342 @@
+* {
+	margin: 0px 0px;
+    padding: 0px 0px;
+    font-family: sans-serif;
+}
+
+@font-face {
+	font-family: 'Heavy Heap'; 
+    src : url('../police/hh.ttf') format('truetype');
+
+    font-family: 'Brookline'; 
+    src : url('../police/brookline.ttf') format('truetype');
+
+    font-family: 'Poetsen'; 
+    src : url('../police/poetsen.ttf') format('truetype');
+}
+
+body{
+	width: 100%;
+}
+
+p{
+    font-family: "Poetsen";
+    font-size: 22px;  
+}
+
+a, h3, b, label{
+    font-family: "Brookline"; 
+}
+
+
+h2 {
+	font-family: "Heavy Heap";
+	font-size: 100px;
+    letter-spacing: 3px;
+    color: #ffffff;
+    padding-top: 5%; /* Pour que la nav ne va pas dessus */
+}
+
+#imgGalerie h2, #blog h2, #contact h2, #connexion h2, #connexion2 h2, #profil h2, #gestionContact h2, #gestionMembre h2 {
+    color: #ffffff;
+    padding: 8% 0 2% 10%;
+}
+
+#ajout h2, #inscription h2{
+    padding: 8% 0 2% 10%;
+    color: #000000;
+}
+
+.champ { /* Champs des formulaires */
+    width: 97%;
+    height: 35px;
+    padding: 0 10px;
+}
+
+/*Pied de page*/
+footer{
+    background-color: #e2c7a3;
+}
+
+footer p, footer p a{
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+}
+
+footer .footBrook{
+    padding: 20px 1% 0 1%;
+}
+
+footer a {
+    font-weight: bold;
+    color: #000000;
+}
+
+footer a:hover {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+/* Menu */
+nav{
+    z-index: 100;
+    position: fixed;
+    visibility: visible;
+    background-color: #000000;
+    width:100%;
+}
+
+nav .menu{	
+    display: flex;
+    opacity :1;
+    padding: 1px;
+    list-style-type: none;
+    border: 3px #8b0000 solid;
+}
+
+nav a{
+    padding: 2% 3%;
+    margin: auto 0;
+    text-align: center;
+    text-decoration:none;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+nav a:hover{
+    background-color:#ffffff;
+    color: #8b0000;
+    font-weight: bold;
+}
+
+.menuBurger{
+    display: none;
+}
+
+/* PAGE D'ACCUEIL --------------------------------------------------------------------*/
+header {
+	font-family: sans-serif;
+	min-height: 950px;
+    background-color:#000000;
+}
+
+header h1{
+    float: left;
+    color: white;
+    opacity: 0;
+    letter-spacing: 8px;
+	font-size: 100px;
+    font-family: "Heavy Heap";
+    margin: 18% 0 0 3%;
+}
+
+header img{
+    float: right;
+    width: 530px;
+    margin: 14% 0 0 0;
+}
+
+/*Présentation du personnage*/
+#personnage {
+	height: 900px;
+    background-color: #000000;
+}
+
+#personnage h2{
+    padding-top: 7%;
+    padding-left: 40%;
+    width: 500px; /* Pour ne pas faire défiler la page */
+}
+
+#personnage .clique{
+    color:#ff0000;
+    font-size: 40px;
+    margin : 15% 0 0 32%;
+}
+
+#personnage .bio{
+    display: flex;
+    height: 1px; /* Pour mettre les animation à côté */
+    padding-left: 70%;
+}
+ 
+#personnage .polaroid { 
+    cursor: pointer;
+}
+
+#personnage .polaroid:hover{ /*Effet sur le polaroid*/
+    transform: scale(1.1);
+    transition: all ease 2s;
+}
+
+#personnage .polaroid img {
+    width: 300px;
+    filter: grayscale(100%); 
+}
+
+#personnage .polaroid img:hover{
+    filter: grayscale(0%);
+    transition: all ease 2s;
+}
+
+#personnage .polaroid p { /* Nom de Brook sur le polaroid */
+    text-align: center;
+	padding: 20px;
+	font-size: 25px;
+    background-color: #ffffff;
+    font-family: "Brookline"; 
+}
+
+#personnage .bio .imgBio{ /* Image pour le responsive */
+    display: none;
+}
+
+#personnage .description{
+    margin: 80px 50px;
+    display: none;
+}
+
+#personnage .description p {
+    font-size: 30px;
+    color: #ffffff; 
+}
+
+#personnage .description .information{
+    font-size: 18px;
+}
+
+/*Actualité : slider*/
+#slide{
+    max-height: 1000px;
+    padding : 20px 0 100px 0;
+    width: 100%;
+    background-color: #000000; 
+}
+
+#slide h2 {
+    margin : 0 0 20px 10%;
+}
+
+/* slider */
+.slideshow {
+    width: 900px;
+    overflow: hidden;
+    border: 4px solid #ffffff;
+    margin: auto;
+}
+
+.slides{
+    display: flex;
+    width: 900px;
+}
+
+.maSlide img{
+    width: 900px;
+    animation: animSlide 50s infinite;
+}
+
+/*Animation du slider*/
+@keyframes animSlide {
+    0% {
+        transform: translateX(0px);
+    }
+    12.5% {
+        transform: translateX(-900px);
+    }
+    25% {
+        transform: translateX(-1800px);
+    }
+    37.5% {
+        transform: translateX(-2700px);
+    }
+    50% {
+        transform: translateX(-3600px);
+    }
+    62.5% {
+        transform: translateX(-2700px);
+    }
+    75% {
+        transform: translateX(-1800px);
+    }
+    87.5% {
+        transform: translateX(-900px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+#slide p, #imgMoment p, #contactMini p{
+    color: #ffffff;
+    text-align: center;
+}
+
+#slide p a, #imgMoment p a, #contactMini p a{
+    color :#ffffff;
+    font-weight: bold;
+    font-size : 24px;
+}
+
+#slide p a:hover, #imgMoment p a:hover, #contactMini p a:hover {
+    zoom: 1.3;
+    transition: 2s all ease;
+    color:#ff0000;
+    text-decoration: none;
+}
+
+/*Nouveautés de la semaine : Images du moment*/
+#imgMoment {
+	min-height: 900px;
+    padding : 20px 0;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+#imgMoment h2{
+    text-align: center;
+}
+
+#imgMoment .img { /*Pour que les images sont à côtés les unes des autres */
+	display: flex;
+	justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 80px;
+}
+
+/*Effet zoom sur les photos lorsque la souris est dessus */
+#imgMoment .img div{ 
+	margin: 2% 4% ;
+	transition: all ease 1s;	
+}
+
+#imgMoment .img div:hover {
+    transform: scale(1.1);
+}
+
+#imgMoment .img img {
+	height: 200px;
+	border: 2px solid #ff0000;
+}
+
+#imgMoment .img img:hover {
+	border : none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Mini contact */
+#contactMini {
+	min-height: 800px;
+    padding-bottom: 30px;
+    background-color: #8b0000;
+}
+
+#contactMini h2{
+    padding-left: 10%;
+}
+
+#contactMini img{
+    width: 500px;
+    display: block;
+    margin: auto;
+    border: 2px solid #ffffff;
+}
+
+/* PAGE GALERIE D'IMAGE -----------------------------------------------------------*/
+#imgGalerie{
+    background-color: #000000;
+    padding-bottom: 3%;
+}
+
+#imgGalerie p{
+    color: white;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#imgGalerie .image{
+    background-color: black;
+    padding: 0 6%;
+    text-align: center;
+}
+
+/* Effet lorsque la souris va sur l'image */
+#imgGalerie .image img {
+    width: 330px;
+	border: 2px solid white;
+	border-radius: 5px;
+  	cursor: pointer;
+  	transition: 0.3s all;
+    margin: 3%;
+}
+
+#imgGalerie .image img:hover{
+	opacity: 0.7;
+    border:none;
+}
+
+
+/* PAGE BLOG -----------------------------------------------------------*/
+#blog{
+    background-color: darkred;
+}
+
+#blog .description{
+    color:#ffffff;
+    text-align: center;
+    padding : 0 6%;
+}
+
+#blog .article{
+    width: 80%;
+    margin: 80px auto 0 auto;
+}
+
+#blog .article h3{
+    color: #ffffff;
+    font-size: 55px;
+    font-family: "Heavy Heap";
+    letter-spacing: 3px;
+    padding: 2%;
+}
+
+#blog .article img{
+    width : 100%;
+}
+
+#blog .article p {
+    color: #ffffff;
+    padding : 2%;
+}
+
+#blog .article ol, #blog .article ul{
+    color: #ffffff;
+    padding-left: 6%; 
+}
+
+
+/* PAGE CONTACT -----------------------------------------------------------*/
+#contact {
+    background-color: #8b0000;
+    min-height:900px;
+}
+
+#contact h3 {
+	text-align: center;
+	color: #ffffff;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+#contact #monFormulaire{
+    width: 600px;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+#contact .champ{
+    height: 50px;
+    width: 97%;
+}
+
+#contact textarea {
+    height: 100px;
+    resize: vertical;
+    padding: 10px;
+    width: 97%;
+}
+
+#contact #bouton {
+	width: 241px;
+	height: 55px;
+	background-color: #000000;
+	text-transform: uppercase;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+    border-radius: 5px;
+    display: block;
+	margin: 32px auto 0 auto;
+    box-shadow: 3px 3px 7px 2px #808080;
+    color: #ffffff;
+    border: #000000;
+    font-family: "Brookline";
+    letter-spacing: 2px;
+}
+
+#contact #bouton a {
+	text-decoration : none;
+	color: #ffffff;
+}
+
+#contact #bouton:hover {
+	box-shadow: none;
+	cursor: pointer;
+}
+
+.alert {
+    color: #721c24;
+    background-color: #f8d7da;
+    padding: 0.75% 1.25%;
+    margin-top: 20px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+}
+
+.alertGlobal {
+    display: block;
+    margin: auto;
+    width: 730px;
+    color: red;
+    background-color: #fde6e6;
+    padding: 2.5% 1%;
+    margin-bottom: 40px;
+    border: 1px solid red;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+/* PAGE MENTION LEGAL -----------------------------------------------------------*/
+#texteMention {
+    height: auto;
+    background-color: #faebd7;
+    padding: 10% 4%;
+}
+
+#texteMention h1{
+    font-family: "Heavy Heap";
+	font-size: 100px;
+    letter-spacing: 3px;
+}
+
+/*BDD-------------------------------------------------------------------------------------------------------*/
+/* PAGES INSCRIPTION ET CONNEXION-----------------------------------------------------------*/
+#inscription{
+    background-color: #d3d3d3;
+    min-height: 1200px;
+ }
+
+ #inscription label, #inscription p{
+     color: #ffffff;
+ }
+
+ #inscription p, #connexion p{
+     text-align: center;
+     color: #000000;
+     font-size: 24px;
+ }
+
+ #inscription img, #connexion img {
+     width: 300px;
+     display : block;
+     margin: 0 auto;
+ }
+
+ #inscription .formInscription, #connexion .formConnexion {
+    width: 700px;
+    margin: 20px auto 0;
+    border: 5px solid #000000;
+    padding: 20px;
+    background-color: #8b0000;
+}
+
+#inscription .champ {
+    border: 1px solid #b13232;
+    height: 35px;
+    padding: 0 10px;
+}
+
+#inscription .envoyer, #connexion .envoyer { /* Bouton envoyer */
+    background-color: #000000;
+    width: 98%;
+    border: 1px solid #000000;
+    height: 35px;
+    color: white;
+    font-size: 16px;
+    margin-top : 30px;
+    cursor: pointer;
+    font-family: "Brookline";
+    letter-spacing: 2px;
+}
+
+#connexion {
+    background-color: #8b0000;
+    min-height: 1000px;
+}
+
+#connexion p {
+    color: #ffffff;
+}
+
+#connexion .formConnexion {
+    border: 5px solid #000000;
+    background-color: #d3d3d3;
+}
+
+#connexion .champ {
+    border: 1px solid #b13232;
+}
+
+#connexion .envoyer {
+    background-color: #8b0000;
+    border: 1px solid #8b0000;
+    color: #ffffff;
+}
+
+.alertGlobal2 {
+    display: block;
+    color: #ff0000;
+    background-color: #f5bebe;
+    padding: 2.5% 1%;
+    margin: 20px auto;
+    border: 1px solid #ff0000;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+/* Lorsque que l'internaute se connecte */
+#connexion2{
+    background-color: #8b0000; 
+    min-height: 1000px;
+}
+
+#connexion2 img {
+    background-color: #d3d3d3;
+    padding: 20px;
+    border: 5px solid #000000;
+    width: 450px;
+    display: block;
+    margin: auto;
+}
+
+/* PAGE PROFIL -----------------------------------------------------------*/
+#profil{
+    background-color: #8b0000;
+    min-height: 1000px;
+    overflow: hidden;
+}
+
+#profil p {
+     color: #ffffff;
+     text-align: center;
+}
+
+#profil li{
+    font-family : "Poetsen";
+}
+
+#profil a{
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 22px;
+}
+
+#profil a:hover{
+    color: #000000;
+    text-decoration: none;
+}
+
+#profil .bio{
+    display: flex;
+    margin: 0 20%;
+}
+
+#profil .polaroid2{
+    width : 300px;
+    padding: 10px 10px 20px 10px;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    box-shadow: 10px 10px 5px #222121;
+    text-align: center;
+}
+
+#profil .polaroid2 p{
+     font-size: 25px;
+     padding-top: 20px;
+     font-family: "Brookline"; 
+}
+
+#profil .polaroid2 img {
+	width: 300px; 
+}
+
+#profil .description {
+    margin : 2% 0px 2% 15%;
+}
+
+#profil .description ul {
+    width: 500px;
+}
+
+#profil .description li {
+    font-size: 25px;
+    color: #ffffff;
+    margin: 10px; 
+}
+
+
+/* PAGE AJOUT BLOG ET AJOUT IMAGE-----------------------------------------------------------*/
+#ajout {
+    min-height: 1200px;
+    background-color: #f5f5f5;
+    padding-bottom: 50px; 
+}
+
+#ajout p{
+    margin-bottom: 20px;
+    text-align: center;
+    color: #8b0000;
+    padding: 0 6%;
+}
+
+#ajout a{
+    font-weight: bold;
+    color: #000000;
+}
+
+#ajout a:hover{
+    color: #ff0000;
+    text-decoration: none;
+    zoom : 1.3;
+    transition: 1s all ease;
+}
+
+#ajout #monFormulaire{
+    width: 500px;
+    margin: auto;
+}
+
+#ajout label{
+    color: #8b0000;
+    font-size: 18px;
+}
+
+#ajout .champ{
+    height: 50px;
+	margin: 10px auto 3px auto;
+    border: 2px solid #8b0000;
+}
+
+#ajout textarea {
+    width: 95%;
+    resize: vertical;
+    padding-top: 10px;
+    padding-left: 10px; 
+}
+
+#ajout #bouton {
+	width: 241px;
+	height: 55px;
+	background-color: #8b0000;
+	text-transform: uppercase;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+    border-radius: 5px;
+    display: block;
+	margin: 32px auto;
+    box-shadow: 3px 3px 7px 2px #808080;
+    color: #ffffff;
+    border: #000000;
+    font-family: "Brookline";
+    letter-spacing: 2px;
+}
+
+#ajout #bouton a {
+	text-decoration : none;
+	color: #ffffff;
+}
+
+#ajout #bouton:hover {
+	box-shadow: none;
+	cursor: pointer;
+}
+
+#ajout table {
+    border-collapse: collapse; 
+    width: 80%; 
+    margin: auto; 
+    background-color:#8b0000; 
+    color:#ffffff;
+}
+
+#ajout th{ /* Cellules principales du tableau */
+    padding:20px;
+    border : 1px solid #ffffff;
+}
+
+#ajout td{ /* Cellules */
+    padding: 10px;
+    border : 1px solid #ffffff;
+}
+
+/* PAGE MEMBRE et GESTION CONTACT-----------------------------------------------------------*/
+#gestionMembre, #gestionContact {
+    min-height: 900px;
+    background-color: #8b0000;
+}
+
+#gestionMembre p, #gestionContact p{
+    text-align: center;
+    color: #ffffff;
+}
+
+#gestionContact .contact, #gestionMembre .membre{
+    width: 80%;
+    margin: auto;
+    text-align:center;
+}
+
+#gestionMembre .listeMembre, #gestionContact .listeContact{
+    margin : 30px 5%;
+    font-size: 18px;
+    width: 300px;
+    border: 2px solid #000000;
+    padding: 20px;
+    display: inline-block;
+    background-color: #f5f5f5;
+    text-align: left;
+}
+
+/* ANIMATION ICONE -----------------------------------------------------------*/
+.fa-arrow-right{
+    color:#ffffff;
+    animation : animIconeFleche 2s infinite;
+}
+
+.fa-skull {
+    color : #ffffff;
+    font-size:30px;
+}
+.cranePhoto1 {
+    margin : 4%;
+    animation : animIconePhoto1 10s infinite;
+    position: relative;
+}
+
+.cranePhoto2 {
+    margin : 4%;
+    animation : animIconePhoto2 10s infinite;
+    position: relative;
+}
+
+.fa-long-arrow-alt-right{
+    animation : animIcone2 2s infinite;
+}
+
+.craneInter1, .craneInter2{
+    color:#ffffff; 
+    font-size: 15px; 
+    margin-left:20%;
+    margin-bottom: 10px;
+}  
+
+.craneInter1{
+    animation: animIcone1 2s infinite;
+}
+
+.craneInter2{
+    animation: animIcone3 2s infinite;
+}
+
+@keyframes animIconeFleche{
+    0% {transform : translateX(-20px);}
+    50% {transform : translateX(0px);}
+    100% {transform : translateX(-20px);}
+}
+
+@keyframes animIconePhoto1{
+    0%   {color:red; left:280px; top:0px;}
+    25%  {color:yellow; left:-55px; top:0px;}
+    50%  {color:red; left:-55px; top:520px;}
+    75%  {color:yellow; left:300px; top:520px;}
+    100% {color:red; left:300px; top:0px;}
+}
+
+@keyframes animIconePhoto2{
+    0%   {color:red; left:-110px; top:520px;}
+    25%  {color:yellow; left:240px; top:520px;}
+    50%  {color:red; left:240px; top:0px;}
+    75%  {color:yellow; left:-110px; top:0px;}
+    100% {color:red; left:-110px; top:520px;}
+}
+
+@keyframes animIcone1{
+    0% {transform : translateX(-80%);}
+    50% {transform : translateX(310%);}
+    100% {transform : translateX(-80%);}
+}
+
+@keyframes animIcone2{
+    0% {transform : translateX(0%);}
+    50% {transform : translateX(1000%);}
+    100% {transform : translateX(0%);}
+}
+
+@keyframes animIcone3{
+    0% {transform : translateX(850%);}
+    50% {transform : translateX(-50%);}
+    100% {transform : translateX(850%);}
+}
+
+
+
+
+/*RESPONSIVE-------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:1497px){
+    header h1{
+        letter-spacing: 2px;
+    }
+    
+    #personnage .bio{
+        padding-left: 50%;
+    }
+
+    #personnage .clique{
+        margin-left: 15%;
+    }
+}
+
+@media screen and (max-width:1350px){
+    /*Mettre img en dessous du titre */
+    header{ 
+        margin: 0;
+        padding-bottom: 2%;
+    } 
+    
+    header h1{
+        margin: 0;
+        float: none;
+        text-align: center;
+        padding-top: 10%;
+        font-size: 10vw;
+    }
+    
+    header img{
+        float: none;
+        display:block;
+        margin: 5% auto 0;
+        width: 60%;
+    }
+    
+    nav a {
+        font-size : 15px;
+    }
+    
+    #personnage h2 {
+        padding: 8% 0 0 20%;
+    }
+    
+    #personnage .description p, #profil .description li{
+        font-size: 20px;
+    } 
+}
+
+@media screen and (max-width:1000px){
+    /*Menu burger*/
+    nav {
+        height: 100vh;
+        width: 100%;
+        z-index: 10; 
+        visibility:hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #ec4040; 
+    }
+
+    .menuBurger{
+        display: block;
+        position: fixed;
+        top: 50%;
+        right: 0px;
+        z-index: 11;
+        width: 10px;
+        height: 3vh;
+
+        /* Triangle*/
+        border: 100vh solid red;
+        border-width: 5vh;
+        border-color: transparent red transparent transparent;
+    }
+
+    .click{
+        height: 40px;
+        width: 90px;
+        cursor: pointer;
+    }
+
+    .menuLigne{
+        width: 30%;
+        height: 3px;
+        background-color: #fff;
+        margin-bottom: 0.7vh;
+        margin-left: 20%;
+    }
+
+    .boutonFermer p{
+        display: none;
+        z-index: 12;
+        color: white;
+        font-size: 40px;
+        position: fixed;
+        cursor: pointer;
+        font-family: "Brookline"; 
+        padding : 0;
+    }
+
+    .boutonFermer {
+        width: 50px;
+        height: 3px;
+        margin-left: 20px;
+    }
+
+    nav .menu{
+        flex-flow: column wrap;
+        border: none;
+    }
+
+    nav .menu a{
+        list-style: none;
+        color: white;
+        text-decoration: none;
+        font-size: 40px;
+        padding: 10% 0%;
+        text-transform: uppercase;
+        border-bottom: 1px solid white;
+        transition: 0.2s ease all; 
+    }
+
+    nav .menu a:last-child{
+        border-bottom: none;
+    }
+
+    nav .menu a:hover{
+        background-color:white;
+        color: black;
+    }
+    
+    /*-----------------------*/
+    /* Redimension du texte et polaroid pour la version mobile */
+    #personnage h2 { 
+        padding: 8% 0 0 10%;
+    }
+
+    #personnage .description{
+        margin: 65px 0 0 20px;
+    }
+
+    #personnage .description p{
+        font-size: 18px;
+        padding-top: 20px;
+    }
+    
+    #personnage .description .information{
+        font-size : 15px;
+    }
+
+    #personnage .clique{
+        margin-left: 5%;
+    }
+
+    #slide .slideshow, .maSlide img{
+        width : 500px;
+    }
+
+    #slide p{
+        font-size: 15px;
+    }
+    
+    @keyframes animSlide {
+        0% {transform: translateX(0px);}
+        12.5% {transform: translateX(-500px);}
+        25% {transform: translateX(-1000px);}
+        37.5% {transform: translateX(-1500px);}
+        50% {transform: translateX(-2000px);}
+        62.5% {transform: translateX(-1500px);}
+        75% {transform: translateX(-1000px);}
+        87.5% {transform: translateX(-500px);}
+        100% {transform: translateX(0px);}
+    }
+
+    #imgGalerie .image img{
+        width: 200px;
+    }
+
+    /* Resserre le profil */
+    #profil .bio{
+        margin : 0 10%;
+    }
+
+    #profil .description{
+        margin: 2% 0px 2% 5%
+    }
+
+    #profil .description ul {
+        width: 400px;
+    }
+
+    /* Version mobile des tableaux gestion*/
+    #ajout table{
+        width: 90%;
+        font-size: 12px;
+    }
+
+    #ajout th{
+        padding: 10px;
+    }
+
+    #ajout td{
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width:800px){
+    #slide h2, #personnage h2, #contactMini h2, #imgMoment h2, #imgGalerie h2, #blog h2, #contact h2, #inscription h2, #connexion h2, #connexion2 h2, #profil h2, #ajout h2, #gestionMembre h2, #gestionContact h2{
+        font-size: 65px;
+        padding: 10px 0 0 0;
+        text-align: center;
+        margin : 0px 0 10px 0;
+        width: auto;
+    }
+
+    p{
+        font-size : 13px;
+        padding: 0 6%;
+    }
+
+    #ajout label{
+        font-size : 15px;
+    }
+
+    header h1{
+        margin: 0;
+        font-size: 12vw;
+        text-align: center;
+    }
+    
+    header img{
+        margin: 20% auto;
+        width: 80%;
+    }
+
+    /* Mettre la biographie visible en dessous de l'image */
+    #personnage{
+        background-color: #8b0000;
+        height: 1000px;
+    }
+    
+    #personnage .bio{
+        display : block;
+        padding-left: 0%;
+    }
+    
+    #personnage .polaroid{
+        display: none;
+    }
+    
+    #personnage .bio .imgBio{
+        display: block;
+        width: 300px;
+        margin: auto;
+    }
+    
+    #personnage .description{
+        display: block;
+        text-align: center;
+        margin: 2% 2% 0 2%;
+    }
+
+    #personnage .clique{
+        display:none;
+    }
+
+    #slide p a, #imgMoment p a, #contactMini p a{
+        font-size : 15px;
+    }
+
+    #imgMoment .img img{ /* Images version mobile */
+        height: 150px;
+    }
+
+    #contactMini img{
+        width : 400px;
+    }
+
+    #blog .article h3{
+        font-size : 35px;
+    }
+
+    #blog .article{
+        margin-top: 30px;
+    }
+
+    #contact h3{
+        font-size: 20px;
+    }
+
+    .alertGlobal{
+        width : 80%;
+        font-size: 20px;  
+    }
+
+    /* Version mobile inscription et connexion */
+    #inscription img, #connexion img {
+        width: 200px;
+    }
+
+    #inscription .formInscription, #connexion .formConnexion{
+        width: 80%;
+    }
+
+    #connexion2 img{
+        width: 300px;
+        margin-top: 100px;
+    }
+
+    /* Version mobile profil */
+    #profil .bio{
+        display: block;
+        height: auto;
+        margin: 0;
+    }
+
+    #profil .description{
+        margin: 0;
+    }
+
+    #profil .polaroid2{
+        margin: auto;
+    }
+
+    #profil .description ul{
+        margin: 50px auto 0;
+        padding: 0 0 50px 100px;
+    }  
+}
+
+@media screen and (max-width:700px){
+    header{
+        min-height: 0;
+        height: auto;
+    }
+
+    header h1{
+        padding-top: 0;
+    }
+
+    header img{
+        width: 90%;
+    }
+    
+
+    /* Redimension du slider pour mobile */
+    #slide .slideshow, .maSlide img{
+        width : 300px;
+    }
+    
+    @keyframes animSlide {
+        0% {transform: translateX(0px);}
+        12.5% {transform: translateX(-300px);}
+        25% {transform: translateX(-600px);}
+        37.5% {transform: translateX(-900px);}
+        50% {transform: translateX(-1200px);}
+        62.5% {transform: translateX(-900px);}
+        75% {transform: translateX(-600px);}
+        87.5% {transform: translateX(-300px);}
+        100% {transform: translateX(0px);}
+    }
+
+    #contact #monFormulaire{
+        width: 400px;
+    }
+
+    .alert{
+        font-size: 12px;
+        width: 100%;
+    }
+
+    #ajout #monFormulaire{
+        width : 82%;
+    }
+
+    #ajout th, #ajout td{
+        padding:10px 2px;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:500px){
+    header {
+        height: 800px;
+    }
+
+    nav .menu a{
+        font-size: 7vw;
+        padding: 10% 0;
+    } 
+
+    .boutonFermer p{
+        font-size: 30px;
+    }
+    
+    header h1{
+        font-size: 21vw;
+    }
+
+    /* Mini contact version mobile */
+    #contactMini{
+        min-height: 0;
+    }
+
+    #contactMini img{
+        width: 300px;
+    }
+
+    footer p:not(.footBrook), footer p a {
+        font-size: 10px;
+    }
+    
+    #contact #monFormulaire{
+        width: 250px;
+    }
+
+    #profil .description ul{
+        padding-left : 0px;
+        width: 250px;
+    }
+
+    #profil .description li{
+        font-size: 18px;
+    }
+
+    #ajout th, #ajout td{
+        padding: 10px 2px;
+        font-size: 8px;
+    }
+
+    #gestionMembre p, #gestionContact p{
+        font-size: 14px;
+        text-align: center;
+    }
+
+    #gestionMembre .listeMembre, #gestionContact .listeContact{
+        font-size: 12px;
+        width: 200px;
+        padding: 10px;
+        display: block;
+        margin: 30px auto;
+    }  
+}
+
+@media screen and (max-width:370px){
+    #connexion2 img{
+        padding: 1%;
+    }
+}
